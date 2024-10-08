@@ -34,8 +34,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_07_224036) do
   end
 
   create_table "pacientes", force: :cascade do |t|
-    t.string "nombre", null: false
-    t.string "numero_identidad", null: false
+    t.string "nombre"
+    t.string "numero_identidad"
     t.integer "edad"
     t.string "direccion"
     t.string "telefono"

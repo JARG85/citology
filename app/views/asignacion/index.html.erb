@@ -1,0 +1,29 @@
+<!-- component -->
+<div class="flex items-center justify-center p-12 h-screen">
+  <!-- Author: FormBold Team -->
+  <!-- Learn More: https://formbold.com -->
+  <div class="mx-auto w-full max-w-[550px]">
+    <h1 class='text-lg'>Generacion de citas a nivel electronico</h1>
+    <p>Aqui puedes consultar que medicos estan disponibles en tu horario preferido</p>
+    <%= form_with(model: @citum, class: 'mx-auto w-full max-w-[550px]', url: asignacion_index_path, method: :post) do |f| %>
+      <div data-controller='medicos'>
+        <div class="mb-5">
+          <%= f.label :horario, class:'mb-3 block text-base font-medium text-[#07074D]' %><br />
+          <%= f.select :horario, (1..24).to_a, {promp: "Selecciona una hora"}, {class: 'w-full appearance-none rounded-md border border-[#e0e0e0] b
+                          g-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none 
+                          focus:border-[#6A64F1] focus:shadow-md', data: {action: "change->medicos#change"}} %>
+        </div>
+        <div class="mb-5">
+          <%= f.label :medico, class:'mb-3 block text-base font-medium text-[#07074D]' %><br />
+          <%= f.select :medico, [], {}, {
+                        class: 'w-full appearance-none rounded-md border border-[#e0e0e0] b
+                        g-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none 
+                        focus:border-[#6A64F1] focus:shadow-md', data: {medicos_target: "medicoSelect"}}%>
+        </div>
+      </div>
+      <div class="actions mt-3">
+        <%= f.submit "Asignar", class:'w-full py-4 bg-blue-600 rounded-lg text-green-100 cursor-pointer' %>
+      </div>
+    <% end %>
+  </div>
+</div>

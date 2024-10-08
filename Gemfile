@@ -52,6 +52,9 @@ gem 'high_voltage', '~> 4.0'
 # devise
 gem 'devise'
 
+# rails request from front
+gem 'requestjs-rails'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

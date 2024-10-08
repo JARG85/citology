@@ -1,0 +1,40 @@
+<header class="container">
+  <!-- Navbar -->
+  <nav
+            class="flex justify-between md:justify-around py-4 bg-white/80 backdrop-blur-md shadow-md w-full px-10 fixed top-0 left-0 right-0 z-10 px-8 md:px-3">
+    <!-- Logo Container -->
+    <div class="flex items-center">
+      <%= link_to  root_path do %>
+        <%= image_tag 'logo_medico.png', class: 'w-20' %>
+      <% end %>
+    </div>
+    <!-- Links Section -->
+    <div
+                class="items-center md:space-x-8 
+                    justify-center justify-items-start 
+                    md:justify-items-center md:flex md:pt-2 
+                    w-full left-0 top-16 px-5 md:px-10 py-3 
+                    md:py-0 border-t md:border-t-0">
+      <%= link_to 'Inicio', root_path, class: 'flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300' %>
+      <%= link_to 'Sobre nosotros', page_path('about'), class: 'flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300' %>
+      <%= link_to 'Citas', asignacion_index_path, class: 'flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300' %>
+    </div>
+    <!-- destroy session -->
+    <%= button_to 'CERRAR SESION', destroy_paciente_session_path, class:'flex text-red-600 cursor-pointer transition-colors duration-300 font-semibold text-red-600', method: :delete %>
+  </div>
+  <!-- Hamberger Menu -->
+  <button
+                class="w-10 h-10 md:hidden justify-self-end rounded-full hover:bg-gray-100">
+    <svg
+                    class="mx-auto"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24">
+      <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+    </svg>
+  </button>
+</nav>
+</header>
